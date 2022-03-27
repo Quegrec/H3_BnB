@@ -1,18 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@color/main_color"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="90dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/mail"
+        android:inputType="textEmailAddress"
+        android:hint="Mail :"
+        android:textSize="25dp"
+        android:textColorHint="@color/grey"
+        android:gravity="center"
+        android:background="@drawable/edittextbackground"
+        android:layout_marginBottom="30dp"
+        android:paddingLeft="20dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/password"
+        android:inputType="textPassword"
+        android:hint="Mot de passe :"
+        android:textSize="25dp"
+        android:textColorHint="@color/grey"
+        android:gravity="center"
+        android:background="@drawable/edittextbackground"
+        android:layout_marginBottom="30dp"
+        android:paddingLeft="20dp"
+        />
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/signin"
+        android:layout_gravity="center"
+        android:background="@drawable/editbuttonradius"
+        android:text="CONNEXION"
+        android:textSize="20dp"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Vous n'avez pas de compte ?"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/SignUp"
+            android:text="Inscription"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+</LinearLayout>
