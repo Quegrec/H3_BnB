@@ -7,7 +7,7 @@
     android:padding="10dp"
     android:background="@color/main_color"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".log.MainActivity">
 
     <ImageView
         android:layout_width="150dp"

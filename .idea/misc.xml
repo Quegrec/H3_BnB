@@ -5,7 +5,10 @@
       <map>
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/drawable/editbuttonradius.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/drawable/edittextbackground.xml" value="0.35572916666666665" />
+        <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_homepage.xml" value="0.3625" />
+        <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_inscription.xml" value="0.3484375" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/adapter_item.xml" value="0.3625" />
       </map>
     </option>
   </component>
