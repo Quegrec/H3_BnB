@@ -9,10 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.rent.homepage;
-import com.example.rent.log.ISelectTaskLog;
 import com.example.rent.R;
-import com.example.rent.log.MainActivity;
 
 public class InscriptionActivity extends AppCompatActivity implements ISelectTaskInscription {
 
@@ -67,7 +64,7 @@ public class InscriptionActivity extends AppCompatActivity implements ISelectTas
     public void onTaskCompleteLog(String content) {
         // Task for registration
         Toast.makeText(InscriptionActivity.this, "Utilisateur sauvegardé", Toast.LENGTH_SHORT).show();
-        Intent log = new Intent(InscriptionActivity.this, MainActivity.class);
+        Intent log = new Intent(InscriptionActivity.this, ConfInscriptionActivity.class);
         startActivity(log);
     }
 }

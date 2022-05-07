@@ -11,16 +11,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.rent.AddHomeActivity;
 import com.example.rent.Inscription.InscriptionActivity;
 import com.example.rent.R;
-import com.example.rent.homepage;
+import com.example.rent.user.UserActivity;
+import com.example.rent.homepage.homepageActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity implements ISelectTaskLog {
 
-    private Button login;
+    private Button login, test;
     private EditText mail, password;
     private TextView SignUp;
 
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements ISelectTaskLog {
         this.mail = findViewById(R.id.mail);
         this.password = findViewById(R.id.password);
         this.SignUp = findViewById(R.id.SignUp);
+        this.test = findViewById(R.id.test);
 
         this.login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements ISelectTaskLog {
                     // Do the async task
                     GetLog st = new GetLog(MainActivity.this, content_mail, content_password);
                     st.execute();
+                }else{
+                    Toast.makeText(MainActivity.this, "Il faut indiquer sont mail et mot de passe", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -55,6 +60,14 @@ public class MainActivity extends AppCompatActivity implements ISelectTaskLog {
             @Override
             public void onClick(View view) {
                 Intent registration = new Intent(MainActivity.this, InscriptionActivity.class);
+                startActivity(registration);
+            }
+        });
+
+        this.test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent registration = new Intent(MainActivity.this, AddHomeActivity.class);
                 startActivity(registration);
             }
         });
@@ -114,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements ISelectTaskLog {
     public void onTaskCompleteLogin(String content) {
         // Processe at the end of the async task login
         if (content.equals("True")){
-            Intent home = new Intent(MainActivity.this, homepage.class);
+            Intent home = new Intent(MainActivity.this, homepageActivity.class);
             startActivity(home);
         }else{
             Toast.makeText(MainActivity.this, "Mot de pass ou email incorrect", Toast.LENGTH_SHORT).show();

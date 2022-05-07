@@ -1,4 +1,4 @@
-package com.example.rent;
+package com.example.rent.homepage;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.rent.Biens_items;
+import com.example.rent.R;
 
 import java.util.List;
 
@@ -29,7 +32,7 @@ public class BienMaisonAdapter extends BaseAdapter {
     }
 
     @Override
-    public Biens_items getItem(int position) {
+    public Object getItem(int position) {
         return biensItemsList.get(position);
     }
 
@@ -48,27 +51,33 @@ public class BienMaisonAdapter extends BaseAdapter {
 
 
 
-        Biens_items currentItem = getItem(i);
+        Biens_items currentItem = (Biens_items) getItem(i);
         String itemName = currentItem.getName();
         double itemPrix = currentItem.getPrix();
         String itemPrixstr = Double.toString(itemPrix);
-        String itemPays = currentItem.getPays();
         String itemNote = currentItem.getNote();
         String itemImg = currentItem.getImg();
+        String itemType = currentItem.getType();
+        String itemShortDescription = currentItem.getDescription();
+        String itemLocalisation = currentItem.getLocalisation();
 
         TextView itemNameView = view.findViewById(R.id.biens_name);
         TextView itemNoteView = view.findViewById(R.id.biens_note);
-        TextView itemPaysView = view.findViewById(R.id.biens_pays);
         TextView itemPrixView = view.findViewById(R.id.biens_prix);
         ImageView itemImgView = view.findViewById(R.id.logo);
+        TextView itemTypeView = view.findViewById(R.id.biens_type);
+        TextView itemShortDescriptionView = view.findViewById(R.id.biens_description);
+        TextView itemLocalisationView = view.findViewById(R.id.biens_pays);
 
         int id = this.context.getResources().getIdentifier(itemImg, "drawable", this.context.getPackageName());
 
         itemNameView.setText(itemName);
-        itemPaysView.setText(itemPays);
         itemNoteView.setText(itemNote);
         itemImgView.setImageResource(id);
         itemPrixView.setText(itemPrixstr);
+        itemTypeView.setText(itemType);
+        itemShortDescriptionView.setText(itemShortDescription);
+        itemLocalisationView.setText(itemLocalisation);
 
         return view;
     }

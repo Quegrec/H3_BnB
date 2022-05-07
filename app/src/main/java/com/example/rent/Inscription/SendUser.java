@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.example.rent.Inscription.InscriptionActivity;
 import com.example.rent.R;
+import com.example.rent.homepage.homepageActivity;
 import com.example.rent.log.MainActivity;
 
 import java.io.InputStream;

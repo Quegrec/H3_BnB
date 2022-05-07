@@ -1,8 +1,9 @@
-package com.example.rent;
+package com.example.rent.homepage;
 
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.rent.R;
 import com.example.rent.log.MainActivity;
 
 import java.io.InputStream;
@@ -10,11 +11,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class SelectTask extends AsyncTask<String,String,String> {
+public class GetHome extends AsyncTask<String,String,String> {
 
-    private MainActivity act;
+    private homepageActivity act;
 
-    public SelectTask(MainActivity aa){
+    public GetHome(homepageActivity aa){
         this.act = aa;
     }
 
@@ -29,7 +30,7 @@ public class SelectTask extends AsyncTask<String,String,String> {
         URL url;
         HttpURLConnection urlConnection = null;
         try {
-            url = new URL(this.act.getResources().getString(R.string.url));
+            url = new URL(this.act.getResources().getString(R.string.url) + "/getHome.php");
 
             urlConnection = (HttpURLConnection) url.openConnection();
             InputStream in = urlConnection.getInputStream();
@@ -53,6 +54,6 @@ public class SelectTask extends AsyncTask<String,String,String> {
 
     @Override
     protected void onPostExecute(String s) {
-        this.act.onTaskComplete(s);
+        this.act.onTaskCompleteHome(s);
     }
 }
