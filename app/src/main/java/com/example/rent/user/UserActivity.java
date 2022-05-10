@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.rent.R;
+import com.example.rent.addHome.AddHomeActivity;
 import com.example.rent.homepage.homepageActivity;
 import com.example.rent.log.MainActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -18,7 +19,7 @@ import com.google.android.material.navigation.NavigationBarView;
 public class UserActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    private Button logout;
+    private Button logout, addHome;
 
 
     @Override
@@ -29,6 +30,7 @@ public class UserActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         this.logout = findViewById(R.id.logout);
+        this.addHome = findViewById(R.id.add_new_home);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -56,6 +58,14 @@ public class UserActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent logout = new Intent(UserActivity.this, MainActivity.class);
                 startActivity(logout);
+            }
+        });
+
+        this.addHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newHome = new Intent(UserActivity.this, AddHomeActivity.class);
+                startActivity(newHome);
             }
         });
     }

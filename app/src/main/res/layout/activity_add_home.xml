@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_color"
-    tools:context=".AddHomeActivity">
+    tools:context=".addHome.AddHomeActivity">
 
 
     <ScrollView
@@ -39,7 +39,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Titre :"
+                    android:text="Image :"
                     android:textColor="@color/black"
                     android:textSize="25dp"
                     android:textStyle="bold" />
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_baseline_home_24"/>
+                android:src="@drawable/ic_baseline_home_24" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -81,12 +81,14 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/titre"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_weight="4"
                     android:background="@drawable/edittextbackground"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:gravity="center"/>
             </LinearLayout>
 
             <LinearLayout
@@ -105,12 +107,14 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/type"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_weight="4"
                     android:background="@drawable/edittextbackground"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:gravity="center"/>
             </LinearLayout>
 
             <TextView
@@ -123,13 +127,15 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/adresse"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="15dp"
                 android:layout_weight="4"
                 android:background="@drawable/edittextbackground"
-                android:inputType="text" />
+                android:inputType="text"
+                android:gravity="center"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -147,12 +153,14 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/nombre_voyageur"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:background="@drawable/edittextbackground"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:gravity="center"/>
             </LinearLayout>
 
             <LinearLayout
@@ -171,12 +179,14 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/nombre_lit"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_weight="1.5"
                     android:background="@drawable/edittextbackground"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:gravity="center"/>
             </LinearLayout>
 
             <LinearLayout
@@ -195,12 +205,14 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/prix"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_weight="4"
                     android:background="@drawable/edittextbackground"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:gravity="center"/>
             </LinearLayout>
 
             <LinearLayout
@@ -219,37 +231,26 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/code"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_weight="1.5"
                     android:background="@drawable/edittextbackground"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:gravity="center"/>
             </LinearLayout>
 
             <Button
+                android:id="@+id/add_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="25dp"
                 android:background="@drawable/editbuttonradius"
                 android:text="Ajoutez"
-                android:textSize="20dp" />
-
-            <TextView
-                android:id="@+id/text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="test"
-                android:maxLines="5"
-                android:ellipsize="end"/>
-
-            <Button
-                android:id="@+id/bt_decode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="70dp"
-                android:text="none" />
+                android:textSize="20dp"
+                android:layout_marginBottom="70dp"/>
 
 
         </LinearLayout>

@@ -3,6 +3,7 @@ package com.example.rent.homepage;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,11 +70,16 @@ public class BienMaisonAdapter extends BaseAdapter {
         TextView itemShortDescriptionView = view.findViewById(R.id.biens_description);
         TextView itemLocalisationView = view.findViewById(R.id.biens_pays);
 
-        int id = this.context.getResources().getIdentifier(itemImg, "drawable", this.context.getPackageName());
+        //int id = this.context.getResources().getIdentifier(itemImg, "drawable", this.context.getPackageName());
+
+        //Decode base64 string
+        byte[] bytes = Base64.decode(itemImg, Base64.DEFAULT);
+        // Initialize bitmap
+        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
 
         itemNameView.setText(itemName);
         itemNoteView.setText(itemNote);
-        itemImgView.setImageResource(id);
+        itemImgView.setImageBitmap(bitmap);
         itemPrixView.setText(itemPrixstr);
         itemTypeView.setText(itemType);
         itemShortDescriptionView.setText(itemShortDescription);

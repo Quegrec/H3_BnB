@@ -11,10 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.rent.AddHomeActivity;
+import com.example.rent.addHome.AddHomeActivity;
 import com.example.rent.Inscription.InscriptionActivity;
 import com.example.rent.R;
-import com.example.rent.user.UserActivity;
 import com.example.rent.homepage.homepageActivity;
 
 import org.json.JSONArray;

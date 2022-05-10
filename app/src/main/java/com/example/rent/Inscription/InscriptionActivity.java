@@ -46,12 +46,12 @@ public class InscriptionActivity extends AppCompatActivity implements ISelectTas
                         if (content_password.equals(content_conf_password)){
                             SendUser su = new SendUser(InscriptionActivity.this, content_name, content_firstname, content_mail, content_password, content_phone);
                             su.execute();
-
                         }else{
-                            Toast.makeText(InscriptionActivity.this, "Le mot de pass n'est pas correct", Toast.LENGTH_SHORT).show();
+                            password.setError("Le mot de passe ne correspond pas");
+                            conf_password.setError("Le mot de passe ne correspond pas");
                         }
                     }else{
-                        Toast.makeText(InscriptionActivity.this, "Le mail n'est pas corret", Toast.LENGTH_SHORT).show();
+                        mail.setError("Le mail n'est pas valid");
                     }
                 }else{
                     Toast.makeText(InscriptionActivity.this, "Tous les elements ne sont pas renseigné", Toast.LENGTH_LONG).show();

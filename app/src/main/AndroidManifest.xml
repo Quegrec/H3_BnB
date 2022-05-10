@@ -3,7 +3,6 @@
     package="com.example.rent" >
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -14,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rent" >
         <activity
-            android:name=".AddHomeActivity"
+            android:name=".addHome.AddHomeActivity"
             android:exported="true" />
         <activity
             android:name=".user.UserActivity"

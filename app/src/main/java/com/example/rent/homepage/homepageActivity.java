@@ -2,6 +2,7 @@ package com.example.rent.homepage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.rent.Biens_items;
 import com.example.rent.R;
+import com.example.rent.addHome.AddHomeActivity;
 import com.example.rent.user.UserActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -23,6 +25,7 @@ import java.util.List;
 public class homepageActivity extends AppCompatActivity implements IHomepage {
 
     BottomNavigationView bottomNavigationView;
+    ProgressDialog progressDialog;
 
 
     @Override
@@ -54,9 +57,22 @@ public class homepageActivity extends AppCompatActivity implements IHomepage {
             }
         });
 
+        // Loading page
+        // Initialize progress dialog
+        progressDialog = new ProgressDialog(homepageActivity.this);
+        // Show dialog
+        progressDialog.show();
+        // Set Content View
+        progressDialog.setContentView(R.layout.progress_dialog);
+        // Set transparent background
+        progressDialog.getWindow().setBackgroundDrawableResource(
+                android.R.color.transparent
+        );
 
         GetHome st = new GetHome(homepageActivity.this);
         st.execute();
+
+        //progressDialog.dismiss();
     }
 
     // ListView
@@ -84,18 +100,12 @@ public class homepageActivity extends AppCompatActivity implements IHomepage {
 
                 ListView homeItems = findViewById(R.id.homeItems);
                 homeItems.setAdapter(new BienMaisonAdapter(homepageActivity.this, biensItemsList));
-                /*C'est ok ca marche :
-                    Il faut (pour afficher les biens):
-                    - Recuperer les biens de la meme magnierre
-                    - cree un object "biens"
-                    - Instancier l'biens
-                    - Afficher les object dans le ListViewll
-                 */
             }
 
         }catch(Exception e){
             e.printStackTrace();
             Toast.makeText(homepageActivity.this, "ca marche pas" + content, Toast.LENGTH_SHORT).show();
         };
+    progressDialog.dismiss();
     }
 }
