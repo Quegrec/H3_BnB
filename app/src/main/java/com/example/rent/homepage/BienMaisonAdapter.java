@@ -11,7 +11,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.rent.Biens_items;
 import com.example.rent.R;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.rent;
+package com.example.rent.homepage;
 
 public class Biens_items {
 

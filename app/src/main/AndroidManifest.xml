@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rent" >
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,6 +12,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rent" >
+        <activity
+            android:name=".CashActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.login.MoneyActivity"
+            android:exported="true"
+            android:label="@string/title_activity_money" />
+        <activity
+            android:name=".confReservation.ConfActivity"
+            android:exported="true" />
+        <activity
+            android:name=".reservation.ConfActivity"
+            android:exported="true" />
+        <activity
+            android:name=".comment.CommentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".reservation.ReservationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".alterHome.AlterHomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Home.HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".testActivity"
+            android:exported="true" />
+        <activity
+            android:name=".addHome.AddHomeConfActivity"
+            android:exported="true" />
         <activity
             android:name=".addHome.AddHomeActivity"
             android:exported="true" />

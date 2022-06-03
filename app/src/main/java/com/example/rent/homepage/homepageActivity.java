@@ -6,12 +6,15 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.rent.Biens_items;
+import com.example.rent.confReservation.ConfActivity;
+import com.example.rent.Home.HomeActivity;
 import com.example.rent.R;
-import com.example.rent.addHome.AddHomeActivity;
 import com.example.rent.user.UserActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -24,9 +27,11 @@ import java.util.List;
 
 public class homepageActivity extends AppCompatActivity implements IHomepage {
 
+    EditText search;
+    ListView listHome;
+
     BottomNavigationView bottomNavigationView;
     ProgressDialog progressDialog;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,10 @@ public class homepageActivity extends AppCompatActivity implements IHomepage {
         getSupportActionBar().hide();
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+        this.search = findViewById(R.id.search);
+        this.listHome = findViewById(R.id.homeItems);
+
+
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -43,6 +52,9 @@ public class homepageActivity extends AppCompatActivity implements IHomepage {
                     case R.id.home:
                         return true;
                     case R.id.destination:
+                        Intent res = new Intent(homepageActivity.this, ConfActivity.class);
+                        startActivity(res);
+                        return true;
                     case R.id.message:
                     case R.id.rent:
                         Toast.makeText(homepageActivity.this, "La page n'existe pas encore", Toast.LENGTH_SHORT).show();
@@ -79,12 +91,13 @@ public class homepageActivity extends AppCompatActivity implements IHomepage {
     @Override
     public void onTaskCompleteHome(String content){
         List<Biens_items> biensItemsList = new ArrayList<>();
+        List<Integer> listID = new ArrayList<Integer>();
         try{
             JSONArray js = new JSONArray(content);
             for(int cpt = 0; cpt<js.length(); cpt++){
                 JSONObject o = js.getJSONObject(cpt);
 
-                Integer id = o.getInt("id");
+                Integer idHome = o.getInt("id");
                 String img = o.getString("main_picture");
                 String name = o.getString("name");
                 String type = o.getString("type");
@@ -93,13 +106,23 @@ public class homepageActivity extends AppCompatActivity implements IHomepage {
                 String localisation = o.getString("localisation");
                 String short_description = o.getString("short_description");
                 Integer price = o.getInt("price");
+                listID.add(idHome);
 
                 //Toast.makeText(homepageActivity.this, img+  note+ type+  name+  short_description+ 120 + voyageur_max+ localisation, Toast.LENGTH_SHORT).show();
 
-                biensItemsList.add(new Biens_items( id, img,  note,  type,  name,  short_description, price , voyageur_max, localisation));
+                biensItemsList.add(new Biens_items( idHome, img,  note,  type,  name,  short_description, price , voyageur_max, localisation));
 
                 ListView homeItems = findViewById(R.id.homeItems);
                 homeItems.setAdapter(new BienMaisonAdapter(homepageActivity.this, biensItemsList));
+
+                listHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                        Intent in = new Intent(homepageActivity.this, HomeActivity.class);
+                        in.putExtra("id", String.valueOf(listID.get(position)));
+                        startActivity(in);
+                    }
+                });
             }
 
         }catch(Exception e){

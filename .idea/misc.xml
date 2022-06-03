@@ -7,17 +7,27 @@
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/drawable/bg_round_loading.xml" value="0.2657407407407407" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/drawable/editbuttonradius.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/drawable/edittextbackground.xml" value="0.35572916666666665" />
+        <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/drawable/edittextbackgroundbig.xml" value="0.3026041666666667" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2640625" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2640625" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.3614583333333333" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23072916666666668" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_add_home.xml" value="0.33" />
+        <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_add_home_conf.xml" value="0.2864583333333333" />
+        <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_comment.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_conf.xml" value="0.3484375" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_conf_inscription.xml" value="0.3625" />
+        <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_conf_reservation.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_homepage.xml" value="0.3625" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_inscription.xml" value="0.3484375" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_reservation.xml" value="0.2911458333333333" />
+        <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_test.xml" value="0.24322916666666666" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/activity_user.xml" value="0.25" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/adapter_item.xml" value="0.33" />
+        <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/adapter_item_comment.xml" value="0.37447916666666664" />
+        <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/adapter_item_reservation.xml" value="0.28802083333333334" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/fragment_destination.xml" value="0.19795221843003413" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/fragment_home.xml" value="0.19795221843003413" />
         <entry key="..\:/Users/33695/Desktop/Projet app mobile/Code/app/src/main/res/layout/fragment_message.xml" value="0.1" />

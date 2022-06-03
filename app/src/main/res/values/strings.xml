@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Rent</string>
-    <string name="url">https://d62e-2a01-e0a-5c9-e830-a4b2-69b1-ce1b-d69.ngrok.io</string>
+    <string name="url">https://d3a3-94-199-126-6.ngrok.io</string>
+    <string name="title_activity_money">MoneyActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>

@@ -3,7 +3,10 @@ package com.example.rent.log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.rent.addHome.AddHomeActivity;
+import com.example.rent.reservation.ReservationActivity;
 import com.example.rent.Inscription.InscriptionActivity;
 import com.example.rent.R;
 import com.example.rent.homepage.homepageActivity;
@@ -25,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements ISelectTaskLog {
     private EditText mail, password;
     private TextView SignUp;
 
+    SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +41,13 @@ public class MainActivity extends AppCompatActivity implements ISelectTaskLog {
         this.password = findViewById(R.id.password);
         this.SignUp = findViewById(R.id.SignUp);
         this.test = findViewById(R.id.test);
+
+        sharedPreferences = getSharedPreferences("LOG", MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("USER" , 0);
+        editor.apply();
+
 
         this.login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,8 +78,9 @@ public class MainActivity extends AppCompatActivity implements ISelectTaskLog {
         this.test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent registration = new Intent(MainActivity.this, AddHomeActivity.class);
-                startActivity(registration);
+                Intent test = new Intent(MainActivity.this, ReservationActivity.class);
+                test.putExtra("id", "57");
+                startActivity(test);
             }
         });
 
@@ -125,11 +138,14 @@ public class MainActivity extends AppCompatActivity implements ISelectTaskLog {
     @Override
     public void onTaskCompleteLogin(String content) {
         // Processe at the end of the async task login
-        if (content.equals("True")){
+        if ((!content.equals("False")) && (Integer.valueOf(content) > 0) ){
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("USER" , Integer.valueOf(content));
+            editor.apply();
             Intent home = new Intent(MainActivity.this, homepageActivity.class);
             startActivity(home);
         }else{
-            Toast.makeText(MainActivity.this, "Mot de pass ou email incorrect", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Le mot de passe ou le mail est incorrect", Toast.LENGTH_LONG).show();
             password.setText("");
         }
     }
@@ -154,6 +170,32 @@ public class MainActivity extends AppCompatActivity implements ISelectTaskLog {
             Toast.makeText(MainActivity.this, "Contenu = " + content, Toast.LENGTH_SHORT).show();
         };
         Toast.makeText(MainActivity.this, content, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        popUp("Voulez-vous quitter ?");
+
+    }
+    public void popUp(String message){
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle("Quitter")
+                .setMessage(message)
+                .setPositiveButton("oui", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        // Response possitive
+                        finish();
+                    }
+                })
+                .setNegativeButton("non", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //Reponse Negative
+                    }
+                })
+                .setCancelable(false)
+                .show();
     }
 
 }
