@@ -24,7 +24,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity implements ISelectTaskLog {
 
-    private Button login, test;
+    private Button login;
     private EditText mail, password;
     private TextView SignUp;
 
@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements ISelectTaskLog {
         this.mail = findViewById(R.id.mail);
         this.password = findViewById(R.id.password);
         this.SignUp = findViewById(R.id.SignUp);
-        this.test = findViewById(R.id.test);
 
         sharedPreferences = getSharedPreferences("LOG", MODE_PRIVATE);
 
@@ -74,65 +73,6 @@ public class MainActivity extends AppCompatActivity implements ISelectTaskLog {
                 startActivity(registration);
             }
         });
-
-        this.test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent test = new Intent(MainActivity.this, ReservationActivity.class);
-                test.putExtra("id", "57");
-                startActivity(test);
-            }
-        });
-
-
-
-
-
-
-
-        /*
-        this.login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String content_mail = mail.getText().toString();
-                String content_password = password.getText().toString();
-
-                if ((!content_mail.equals("")) && (!content_password.equals(""))){
-                    Intent home = new Intent(MainActivity.this,homepage.class);
-                    startActivity(home);
-                }
-            }
-        });*/
-
-        /*
-        this.login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SelectTask st = new SelectTask(MainActivity.this);
-                st.execute();
-            }
-        });
-
-
-
-        this.SignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /* Redirection a la page d'inscription
-                Intent inscription = new Intent(MainActivity.this,Inscription.class);
-                startActivity(inscription);
-
-                String name = "URSU";
-                String firstname = "Lilia";
-                String mail = "lilia.1978@gmail.com";
-                String password = "Lilia1978";
-
-                SendUser st = new SendUser(MainActivity.this, name, firstname, mail, password);
-                st.execute();
-
-            }
-        });
-        */
     }
 
     @Override
@@ -158,13 +98,6 @@ public class MainActivity extends AppCompatActivity implements ISelectTaskLog {
                 JSONObject o = js.getJSONObject(cpt);
                 String name = o.getString("name");
                 Toast.makeText(MainActivity.this, name, Toast.LENGTH_SHORT).show();
-                /*C'est ok ca marche :
-                    Il faut (pour afficher les biens):
-                    - Recuperer les biens de la meme magnierre
-                    - cree un object "biens"
-                    - Instancier l'biens
-                    - Afficher les object dans le ListView
-                 */
             }
         }catch(Exception e){
             Toast.makeText(MainActivity.this, "Contenu = " + content, Toast.LENGTH_SHORT).show();

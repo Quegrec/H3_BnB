@@ -16,10 +16,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.rent.Rent.RentActivity;
+import com.example.rent.addHome.AddHomeActivity;
 import com.example.rent.alterHome.AlterHomeActivity;
 import com.example.rent.R;
 import com.example.rent.comment.CommentActivity;
+import com.example.rent.confReservation.ConfActivity;
 import com.example.rent.homepage.homepageActivity;
+import com.example.rent.message.MessageActivity;
 import com.example.rent.reservation.ReservationActivity;
 import com.example.rent.user.UserActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -69,18 +73,25 @@ public class HomeActivity extends AppCompatActivity implements ISelectTaskOneHom
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.home:
-                        Intent home = new Intent(HomeActivity.this, UserActivity.class);
+                        Intent home = new Intent(HomeActivity.this, homepageActivity.class);
                         startActivity(home);
+                        return true;
                     case R.id.destination:
+                        Intent res = new Intent(HomeActivity.this, ConfActivity.class);
+                        startActivity(res);
+                        return true;
                     case R.id.message:
+                        Intent mess = new Intent(HomeActivity.this, MessageActivity.class);
+                        startActivity(mess);
+                        return true;
                     case R.id.rent:
-                        Toast.makeText(HomeActivity.this, "La page n'existe pas encore", Toast.LENGTH_SHORT).show();
+                        Intent rent = new Intent(HomeActivity.this, RentActivity.class);
+                        startActivity(rent);
                         return true;
                     case R.id.user:
                         Intent user = new Intent(HomeActivity.this, UserActivity.class);
                         startActivity(user);
                         return true;
-
                 }
                 return false;
             }

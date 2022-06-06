@@ -16,12 +16,15 @@ import android.widget.Toast;
 
 import com.example.rent.Home.HomeActivity;
 import com.example.rent.R;
+import com.example.rent.Rent.RentActivity;
+import com.example.rent.addHome.AddHomeActivity;
 import com.example.rent.comment.CommentActivity;
 import com.example.rent.comment.CommentAdapter;
 import com.example.rent.comment.Comment_items;
 import com.example.rent.comment.GetComment;
 import com.example.rent.homepage.BienMaisonAdapter;
 import com.example.rent.homepage.homepageActivity;
+import com.example.rent.message.MessageActivity;
 import com.example.rent.user.UserActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -81,16 +84,21 @@ public class ConfActivity extends AppCompatActivity implements ISelectTaskConfRe
                         startActivity(home);
                         return true;
                     case R.id.destination:
+                        Intent res = new Intent(ConfActivity.this, ConfActivity.class);
+                        startActivity(res);
                         return true;
                     case R.id.message:
+                        Intent mess = new Intent(ConfActivity.this, MessageActivity.class);
+                        startActivity(mess);
+                        return true;
                     case R.id.rent:
-                        Toast.makeText(ConfActivity.this, "La page n'existe pas encore", Toast.LENGTH_SHORT).show();
+                        Intent rent = new Intent(ConfActivity.this, RentActivity.class);
+                        startActivity(rent);
                         return true;
                     case R.id.user:
                         Intent user = new Intent(ConfActivity.this, UserActivity.class);
                         startActivity(user);
                         return true;
-
                 }
                 return false;
             }
@@ -134,8 +142,6 @@ public class ConfActivity extends AppCompatActivity implements ISelectTaskConfRe
 
         }catch(Exception e){
             // Reload activity
-            finish();
-            startActivity(getIntent());
         };
 
         progressDialog.dismiss();

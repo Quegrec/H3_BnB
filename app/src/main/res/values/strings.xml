@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Rent</string>
-    <string name="url">https://d3a3-94-199-126-6.ngrok.io</string>
+    <string name="url">https://6d88-2a01-e0a-5c9-e830-82d-e8cb-2d1b-d4c9.eu.ngrok.io</string>
     <string name="title_activity_money">MoneyActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

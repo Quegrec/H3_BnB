@@ -50,7 +50,6 @@ public class SendNewHome extends AsyncTask<String,String,String> {
             e.printStackTrace();
             return null;
         };
-        //Vue que pour le moment il ne retourne rien.
         return "";
     }
 

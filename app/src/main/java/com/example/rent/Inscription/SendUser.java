@@ -36,7 +36,6 @@ public class SendUser extends AsyncTask<String,String,String> {
     @Override
     protected String doInBackground(String... strings) {
 
-        // Code pour envoie :
         URL url;
         HttpURLConnection urlConnection = null;
         try{
@@ -49,7 +48,6 @@ public class SendUser extends AsyncTask<String,String,String> {
             e.printStackTrace();
             return null;
         };
-        //Vue que pour le moment il ne retourne rien.
         return "";
     }
 

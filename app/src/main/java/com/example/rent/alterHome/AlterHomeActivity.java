@@ -27,7 +27,11 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.rent.Home.HomeActivity;
 import com.example.rent.R;
+import com.example.rent.Rent.RentActivity;
+import com.example.rent.addHome.AddHomeActivity;
+import com.example.rent.confReservation.ConfActivity;
 import com.example.rent.homepage.homepageActivity;
+import com.example.rent.message.MessageActivity;
 import com.example.rent.user.UserActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -109,16 +113,23 @@ public class AlterHomeActivity extends AppCompatActivity implements ISelectTaskO
                     case R.id.home:
                         Intent home = new Intent(AlterHomeActivity.this, homepageActivity.class);
                         startActivity(home);
+                        return true;
                     case R.id.destination:
+                        Intent res = new Intent(AlterHomeActivity.this, ConfActivity.class);
+                        startActivity(res);
+                        return true;
                     case R.id.message:
+                        Intent mess = new Intent(AlterHomeActivity.this, MessageActivity.class);
+                        startActivity(mess);
+                        return true;
                     case R.id.rent:
-                        Toast.makeText(AlterHomeActivity.this, "La page n'existe pas encore", Toast.LENGTH_SHORT).show();
+                        Intent rent = new Intent(AlterHomeActivity.this, RentActivity.class);
+                        startActivity(rent);
                         return true;
                     case R.id.user:
                         Intent user = new Intent(AlterHomeActivity.this, UserActivity.class);
                         startActivity(user);
                         return true;
-
                 }
                 return false;
             }

@@ -54,8 +54,6 @@ public class CommentAdapter extends BaseAdapter {
         TextView itemFirstname = view.findViewById(R.id.user_firstname);
         TextView itemComment = view.findViewById(R.id.list_comment);
 
-
-        //int id = this.context.getResources().getIdentifier(itemImg, "drawable", this.context.getPackageName());
         Comment_items currentItem = (Comment_items) getItem(i);
         itemName.setText(currentItem.getUser_name());
         itemFirstname.setText(currentItem.getUser_firstname());

@@ -26,7 +26,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.rent.R;
+import com.example.rent.Rent.RentActivity;
+import com.example.rent.confReservation.ConfActivity;
 import com.example.rent.homepage.homepageActivity;
+import com.example.rent.message.MessageActivity;
 import com.example.rent.user.UserActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -84,16 +87,23 @@ public class AddHomeActivity extends AppCompatActivity {
                     case R.id.home:
                         Intent home = new Intent(AddHomeActivity.this, homepageActivity.class);
                         startActivity(home);
+                        return true;
                     case R.id.destination:
+                        Intent res = new Intent(AddHomeActivity.this, ConfActivity.class);
+                        startActivity(res);
+                        return true;
                     case R.id.message:
+                        Intent mess = new Intent(AddHomeActivity.this, MessageActivity.class);
+                        startActivity(mess);
+                        return true;
                     case R.id.rent:
-                        Toast.makeText(AddHomeActivity.this, "La page n'existe pas encore", Toast.LENGTH_SHORT).show();
+                        Intent rent = new Intent(AddHomeActivity.this, RentActivity.class);
+                        startActivity(rent);
                         return true;
                     case R.id.user:
                         Intent user = new Intent(AddHomeActivity.this, UserActivity.class);
                         startActivity(user);
                         return true;
-
                 }
                 return false;
             }
@@ -110,43 +120,6 @@ public class AddHomeActivity extends AppCompatActivity {
 
             }
         });
-
-        /*btDecode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Decode base64 string
-                byte[] bytes = Base64.decode(sImage, Base64.DEFAULT);
-                // Initialize bitmap
-                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
-                imgGallery.setImageBitmap(bitmap);
-            }
-        });*/
-
-        /*
-        this.addHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String content_titre = titre.getText().toString();
-                String content_type = type.getText().toString();
-                String content_adresse = adresse.getText().toString();
-                String content_nbr_voyageur = nombreVoyageur.getText().toString();
-                String content_nbr_lit = nombreLit.getText().toString();
-                String content_prix = prix.getText().toString();
-                String content_code = code.getText().toString();
-
-                if ((!content_titre.equals("")) && (!content_type.equals("")) && (!content_adresse.equals("")) && (!content_nbr_voyageur.equals("")) && (!content_nbr_lit.equals(""))
-                && (!content_prix.equals("")) && (!content_code.equals(""))){
-                    if (!sImage.equals("")){
-                        SendNewHome su = new SendNewHome(AddHomeActivity.this, sImage, content_titre, content_type, content_adresse, content_nbr_voyageur, content_nbr_lit, content_prix, content_code);
-                        su.execute();
-                    }else{
-                        Toast.makeText(AddHomeActivity.this, "Vous devez importer une image", Toast.LENGTH_SHORT).show();
-                    }
-                }else{
-                    Toast.makeText(AddHomeActivity.this, "Tous les elements ne sont pas renseigné", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });*/
 
         this.addHome.setOnClickListener(new View.OnClickListener() {
             @Override

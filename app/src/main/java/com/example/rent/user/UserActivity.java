@@ -11,6 +11,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.rent.Rent.RentActivity;
+import com.example.rent.confReservation.ConfActivity;
+import com.example.rent.message.MessageActivity;
+import com.example.rent.money.CashActivity;
 import com.example.rent.R;
 import com.example.rent.addHome.AddHomeActivity;
 import com.example.rent.homepage.homepageActivity;
@@ -24,7 +28,7 @@ import org.json.JSONObject;
 public class UserActivity extends AppCompatActivity implements ISelectTaskUser {
 
     BottomNavigationView bottomNavigationView;
-    private Button logout, addHome;
+    private Button logout, addHome, money;
     TextView userName;
 
     SharedPreferences sharedPreferences;
@@ -39,6 +43,7 @@ public class UserActivity extends AppCompatActivity implements ISelectTaskUser {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         this.logout = findViewById(R.id.logout);
         this.addHome = findViewById(R.id.add_new_home);
+        this.money = findViewById(R.id.money);
         this.userName = findViewById(R.id.name);
 
         sharedPreferences = getSharedPreferences("LOG", MODE_PRIVATE);
@@ -65,13 +70,21 @@ public class UserActivity extends AppCompatActivity implements ISelectTaskUser {
                         startActivity(home);
                         return true;
                     case R.id.destination:
+                        Intent res = new Intent(UserActivity.this, ConfActivity.class);
+                        startActivity(res);
+                        return true;
                     case R.id.message:
+                        Intent mess = new Intent(UserActivity.this, MessageActivity.class);
+                        startActivity(mess);
+                        return true;
                     case R.id.rent:
-                        Toast.makeText(UserActivity.this, "La page n'existe pas encore", Toast.LENGTH_SHORT).show();
+                        Intent rent = new Intent(UserActivity.this, RentActivity.class);
+                        startActivity(rent);
                         return true;
                     case R.id.user:
+                        Intent user = new Intent(UserActivity.this, UserActivity.class);
+                        startActivity(user);
                         return true;
-
                 }
                 return false;
             }
@@ -90,6 +103,14 @@ public class UserActivity extends AppCompatActivity implements ISelectTaskUser {
             public void onClick(View view) {
                 Intent newHome = new Intent(UserActivity.this, AddHomeActivity.class);
                 startActivity(newHome);
+            }
+        });
+
+        this.money.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent money = new Intent(UserActivity.this, CashActivity.class);
+                startActivity(money);
             }
         });
     }

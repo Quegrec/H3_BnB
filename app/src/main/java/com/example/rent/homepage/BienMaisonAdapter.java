@@ -69,8 +69,6 @@ public class BienMaisonAdapter extends BaseAdapter {
         TextView itemShortDescriptionView = view.findViewById(R.id.biens_description);
         TextView itemLocalisationView = view.findViewById(R.id.biens_pays);
 
-        //int id = this.context.getResources().getIdentifier(itemImg, "drawable", this.context.getPackageName());
-
         //Decode base64 string
         byte[] bytes = Base64.decode(itemImg, Base64.DEFAULT);
         // Initialize bitmap
