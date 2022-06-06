@@ -59,7 +59,7 @@ L'application nécessitera un compte pour effectuer toute action.
   - Le système contrôle la validité des champs saisis 
   - Retour sur la page de connexion
 - Exceptions : 
-  - L’administrateur commet une erreur sur la saisie d’un ou plusieurs champs 
+  - L’utilisateur commet une erreur sur la saisie d’un ou plusieurs champs 
   - Le système en informe l’utilisateur, retour à l'étape 3
 
 ![cree](https://user-images.githubusercontent.com/78727838/172208309-8d46331d-d93f-4e00-9891-f6dd53e7cde0.jpg)
@@ -104,7 +104,7 @@ L'application nécessitera un compte pour effectuer toute action.
   - Le système contole la validité des champs
   - Retour sur la page d'accueil 
 - Exceptions : 
-  - L’administrateur commet une erreur sur la saisie d’un ou plusieurs champs
+  - L’utilisateur commet une erreur sur la saisie d’un ou plusieurs champs
   - Le système en informe l’utilisateur, retour à l'étape 3
 
 ![cree](https://user-images.githubusercontent.com/78727838/172213562-c9f3c4ae-637d-416c-96d4-58a876a2a247.jpg)
@@ -171,7 +171,7 @@ L'application nécessitera un compte pour effectuer toute action.
 - Pré conditions :  Être identifier
 - Post condition : Voir la liste des biens réservé
 - Scénario normal : 
-  - L’administrateur clique sur le bouton dans la barre de navigation
+  - L’utilisateur clique sur le bouton dans la barre de navigation
   - Le système redirige le loueur sur le page des réservation future
 
 ![aVenir](https://user-images.githubusercontent.com/78727838/172217035-c67863e9-b92e-44a1-bab1-770e33357c80.jpg)
@@ -218,3 +218,5 @@ L'application nécessitera un compte pour effectuer toute action.
 
 
 # Les données - Le modèle des données 
+
+<img width="857" alt="Capture d’écran 2022-06-06 à 20 28 04" src="https://user-images.githubusercontent.com/78727838/172223290-fa03223d-709c-4413-9a9f-56d433d26245.png">
